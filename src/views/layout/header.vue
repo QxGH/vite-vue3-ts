@@ -20,7 +20,7 @@
         :content="isFullscreen ? '退出全屏' : '全屏'"
         placement="bottom"
       >
-        <el-button :icon="FullScreen" circle @click="toggle()" ></el-button>
+        <el-button :icon="FullScreen" circle @click="toggleFullscreen()" ></el-button>
       </el-tooltip>
     </li>
     <li class="item">
@@ -49,7 +49,7 @@ import { Moon, Sunny, FullScreen } from '@element-plus/icons-vue'
 import { globalStore } from '@/store'
 import { useDark, useToggle, useFullscreen } from '@vueuse/core'
 
-const { isFullscreen, enter, exit, toggle } = useFullscreen()
+const { isFullscreen, enter, exit, toggle: toggleFullscreen } = useFullscreen()
 
 const globalData = globalStore()
 
@@ -79,6 +79,16 @@ const toggleDark = useToggle(isDark)
 
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+.logo {
+  width: 32px;
+  height: 32px;
+}
+.right-side {
+  display: flex;
+  align-items: center;
+  .item {
+    padding: 0 10px;
+  }
+}
 </style>

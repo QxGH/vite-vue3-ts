@@ -9,7 +9,6 @@
           <Aside />
         </el-aside>
         <el-main>
-          <i inline-flex i="dark:ep-moon ep-sunny" />
           <RouterView />
         </el-main>
       </el-container>
@@ -18,16 +17,12 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import Header from './header.vue'
 import Aside from './aside.vue'
 
-
-
-
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .layout {
   display: flex;
   height: 100%;
@@ -35,27 +30,14 @@ import Aside from './aside.vue'
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--el-bg-color);
     border-bottom: 1px solid var(--el-border-color);
   }
-  .logo {
-    width: 32px;
-    height: 32px;
-  }
-  .right-side {
-    display: flex;
-    align-items: center;
-    .item {
-      padding: 0 10px;
-    }
-  }
   .el-aside {
+    width: auto;
     display: flex;
     height: 100%;
     flex-direction: column;
-    .aside {
-      flex: 1;
-    }
+    border-right: solid 1px var(--el-menu-border-color);
   }
 }
 </style>
